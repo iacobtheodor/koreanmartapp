@@ -26,7 +26,7 @@ while True:
                     case '1':
                         products.add_product()
                     case '2':
-                        print('Remove')
+                        products.remove_product()
                     case '3':
                         print('Update')
                     case '4':

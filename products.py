@@ -25,3 +25,9 @@ def add_product():
     }
     database.products[product_id] = product_info
     print(f"{name} added successfully!")
+
+def remove_product():
+    product_id = int(input('Please provide a product_id: '))
+    temp_name = database.products[product_id]['name']
+    del database.products[product_id]
+    print(f"{temp_name} removed successfully!")
