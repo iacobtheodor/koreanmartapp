@@ -1,3 +1,7 @@
+import database
+import products
+
+
 MAIN_MENU = """
 1. Products
 2. Clients
@@ -5,60 +9,6 @@ MAIN_MENU = """
 4. Reports
 x. Exit
 """
-
-PRODUCTS_MENU = """
-1. Add
-2. Remove
-3. Update
-4. Display all
-x. Go Back
-"""
-
-products = {
-    1: {
-        'name': 'Banana',
-        'manufacturer': 'Guatemala',
-        'category': 'Fruit',
-        'price': 1,
-        'stock': 500
-    },
-    2: {
-        'name': 'Kiwi',
-        'manufacturer': 'Ecuador',
-        'category': 'Fruit',
-        'price': 2,
-        'stock': 234
-    }
-}
-
-clients = {
-    1: {
-        'last_name': 'Doe',
-        'first_name': 'John',
-        'date_of_birth': '26/04/1965',
-        'email': 'john.doe@test.com'
-    }
-}
-
-
-def add_product():
-    product_id = int(input('Please provide a product_id: '))
-    print(product_id in products.keys())
-    name = input('Please provide a name: ')
-    manufacturer = input('Please provide a manufacturer: ')
-    category = input('Please provide a category: ')
-    price = float(input('Please provide a price: '))
-    stock = int(input('Please provide a stock: '))
-    product_info = {
-        'name': name,
-        'manufacturer': manufacturer,
-        'category': category,
-        'price': price,
-        'stock': stock
-    }
-    products[product_id] = product_info
-    print(f"{name} added successfully!")
-
 
 while True:
     print(MAIN_MENU)
@@ -69,18 +19,18 @@ while True:
         case '1':
             display_second_menu = True
             while display_second_menu:
-                print(PRODUCTS_MENU)
+                print(products.PRODUCTS_MENU)
                 option = input('Select an option from the product menu: ').lower()
 
                 match option:
                     case '1':
-                        add_product()
+                        products.add_product()
                     case '2':
-                        print('Remove')
+                        products.remove_product()
                     case '3':
-                        print('Update')
+                        products.update_product()
                     case '4':
-                        print(products)
+                        print(database.products)
                     case 'x':
                         print('Back')
                         display_second_menu = False
