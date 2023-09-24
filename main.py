@@ -28,7 +28,7 @@ while True:
                     case '2':
                         products.remove_product()
                     case '3':
-                        print('Update')
+                        products.update_product()
                     case '4':
                         print(database.products)
                     case 'x':

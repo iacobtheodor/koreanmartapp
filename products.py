@@ -31,3 +31,14 @@ def remove_product():
     temp_name = database.products[product_id]['name']
     del database.products[product_id]
     print(f"{temp_name} removed successfully!")
+
+def update_product():
+    product_id = int(input("Please select a product to update: "))
+    print(database.products[product_id])
+    update_input = input("Please select what you want to update and the new value:")
+    update_values = update_input.split()
+    update_key = update_values[0]
+    update_value = update_values[1]
+    database.products[product_id][update_key] = update_value
+    print(database.products[product_id])
+    print(f"{update_key} successfully updated!")
