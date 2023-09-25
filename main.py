@@ -45,8 +45,8 @@ while True:
                 option = input('Select an option from the product menu: ').lower()
 
                 match option:
-                    # case '1':
-                    #     products.add_product()
+                    case '1':
+                        clients.add_client()
                     # case '2':
                     #     products.remove_product()
                     # case '3':
