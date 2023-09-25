@@ -24,19 +24,19 @@ def add_client():
     database.clients[client_id] = client_info
     print(f"{first_name} added successfully!")
 
-# def remove_client():
-#     product_id = int(input('Please provide a product_id: '))
-#     temp_name = database.products[product_id]['name']
-#     del database.products[product_id]
-#     print(f"{temp_name} removed successfully!")
-#
-# def update_client():
-#     product_id = int(input("Please select a product to update: "))
-#     print(database.products[product_id])
-#     update_input = input("Please select what you want to update and the new value:")
-#     update_values = update_input.split()
-#     update_key = update_values[0]
-#     update_value = update_values[1]
-#     database.products[product_id][update_key] = update_value
-#     print(database.products[product_id])
-#     print(f"{update_key} successfully updated!")
+def remove_client():
+    client_id = int(input('Please provide a client_id: '))
+    temp_name = database.clients[client_id]['last_name']
+    del database.clients[client_id]
+    print(f"{temp_name} removed successfully!")
+
+def update_client():
+    client_id = int(input("Please select a client to update: "))
+    print(database.clients[client_id])
+    update_input = input("Please select what you want to update and the new value:")
+    update_values = update_input.split()
+    update_key = update_values[0]
+    update_value = update_values[1]
+    database.clients[client_id][update_key] = update_value
+    print(database.clients[client_id])
+    print(f"{update_key} successfully updated!")

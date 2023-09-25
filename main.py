@@ -47,10 +47,10 @@ while True:
                 match option:
                     case '1':
                         clients.add_client()
-                    # case '2':
-                    #     products.remove_product()
-                    # case '3':
-                    #     products.update_product()
+                    case '2':
+                        clients.remove_client()
+                    case '3':
+                        clients.update_client()
                     case '4':
                         print(database.clients)
                     case 'x':
