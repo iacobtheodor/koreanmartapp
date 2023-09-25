@@ -1,3 +1,4 @@
+import clients
 import database
 import products
 
@@ -38,7 +39,26 @@ while True:
                         print('No such option!')
 
         case '2':
-            print('Client')
+            display_second_menu = True
+            while display_second_menu:
+                print(clients.CLIENTS_MENU)
+                option = input('Select an option from the product menu: ').lower()
+
+                match option:
+                    case '1':
+                        clients.add_client()
+                    case '2':
+                        clients.remove_client()
+                    case '3':
+                        clients.update_client()
+                    case '4':
+                        print(database.clients)
+                    case 'x':
+                        print('Back')
+                        display_second_menu = False
+                    case _:
+                        print('No such option!')
+
         case '3':
             print('Transactions')
         case '4':
